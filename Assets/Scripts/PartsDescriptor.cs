@@ -15,7 +15,7 @@ public class PartsDescriptor : MonoBehaviour {
 	}
 
 	void RandomizeType() {
-		partsType = (CarParts.partsList) UnityEngine.Random.Range(0,Enum.GetNames(typeof(CarParts.partsList)).Length - 1);
+		partsType = (CarParts.partsList) UnityEngine.Random.Range(0,Enum.GetNames(typeof(CarParts.partsList)).Length );
 		GetComponent<SpriteRenderer> ().sprite = listOfPartsSpriteInOrderOfEnum [(int)partsType];
 	}
 	

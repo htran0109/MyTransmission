@@ -10,7 +10,7 @@ public class Rock : MonoBehaviour {
     float movementSpeed_UnityUnitPerSecond;
 
     void Start () {
-        movementDirection = transform.up * -1;
+        movementDirection = new Vector3(0, (.52f-.89f), -1.17f);
         playerCar = GameObject.FindGameObjectWithTag("playerCar").GetComponent<CarParts>();
 
     }
@@ -36,5 +36,10 @@ public class Rock : MonoBehaviour {
             //do some stun step
             Destroy(this.gameObject);
         } 
+    }
+    
+    void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
     }
 }

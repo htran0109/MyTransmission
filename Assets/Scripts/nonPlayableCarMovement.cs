@@ -9,11 +9,17 @@ public class nonPlayableCarMovement : MonoBehaviour {
 	float movementSpeed_UnityUnitPerSecond; 
 	// Use this for initialization
 	void Start () {
-		movementDirection = transform.up * -1; 
-	}	
+        movementDirection = new Vector3(0, (.52f - .89f), -1.17f);
+        //movementDirection = Vector3.up * -1;
+    }	
 	
 	// Update is called once per frame
 	void Update () {
 		transform.position += movementSpeed_UnityUnitPerSecond * movementDirection * Time.deltaTime;
 	}
+
+    void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
 }
