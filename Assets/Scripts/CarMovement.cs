@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CarMovement : MonoBehaviour {
 
+	[SerializeField]
     float xVelocity = 0f;
+	[SerializeField]
     float accelRate = .1f;
+	[SerializeField]
     float dampenRate = .02f;
+	[SerializeField]
     float vertSpeed = .25f;
+	[SerializeField]
     float maxSpeed = .4f;
+	[SerializeField]
     private float horizMov = 0;
     
     private float vertMov = 0;
