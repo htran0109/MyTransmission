@@ -161,7 +161,7 @@ public class CarParts : MonoBehaviour {
 
 
             if (shellHealth <= 0) {
-				Destroy(coll.gameObject);
+				Destroy(this.gameObject);
 				Debug.Log ("GAME OVER");
 			}
             
