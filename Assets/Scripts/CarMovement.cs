@@ -99,6 +99,11 @@ public class CarMovement : MonoBehaviour {
 
 		// Clamp within the limits
 		float x = Mathf.Clamp(transform.localPosition.x, -maxXLimit, maxXLimit);
+        if(Mathf.Abs(x) >= maxXLimit - .1)
+        {
+            xVelocity = 0;
+            horizMov = 0;
+        }
 		transform.localPosition = new Vector3 (x, transform.localPosition.y, transform.localPosition.z);
     }
 }

@@ -6,7 +6,8 @@ public class CarPartsSpawner: MonoBehaviour {
 
 	// for now, assumed that this will be attachhed to non-player car
 	// alternatively can change interaction vie physics2D layer
-	const int LAYER_OBJECT_PLAYER = 8; 
+	const int LAYER_OBJECT_PLAYER = 8;
+    const int LAYER_OBJECT_WEAPON = 9;
 
 	[SerializeField]
 	private float sparePartsSpawnDistance; 
@@ -22,14 +23,14 @@ public class CarPartsSpawner: MonoBehaviour {
 	public ParticleSystem explosion;
 
 	void OnTriggerEnter2D(Collider2D collider2D) {
-		if (collider2D.gameObject.layer == LAYER_OBJECT_PLAYER) {
+		if (collider2D.gameObject.layer == LAYER_OBJECT_PLAYER || collider2D.gameObject.layer == LAYER_OBJECT_WEAPON) {
 			// flung parts
 			int numberOfPartsSpawned = Random.Range(1, maximumNumberOfPartsSpawned);
 			Debug.Log ("numbberOfPartsSpaned: " + numberOfPartsSpawned);
             // Play particle effect at the point
             explosion.transform.position = transform.position;
             explosion.Play();
-            if (collider2D.gameObject.tag != "playerCar")
+            if (collider2D.gameObject.layer == LAYER_OBJECT_WEAPON)
             {
                 spawnSpareParts(numberOfPartsSpawned);
             }
@@ -37,6 +38,7 @@ public class CarPartsSpawner: MonoBehaviour {
 
 
 			Destroy (this.gameObject);
+            Debug.Log("not supposed yo be here");
 		}
 	}
 

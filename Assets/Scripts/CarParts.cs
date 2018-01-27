@@ -78,7 +78,7 @@ public class CarParts : MonoBehaviour {
             {
                 float brokenPart = Random.Range(0, workingParts.Count);
                 partsArray[(int)workingParts[(int)brokenPart]] = false;
-                Debug.Log("Broke:" + (int)brokenPart);
+                Debug.Log("Broke:" + (int)workingParts[(int)brokenPart]);
             }
         }
     }

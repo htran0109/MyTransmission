@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4268835070737600}
   - component: {fileID: 212364668541110258}
+  - component: {fileID: 114224283276107402}
   m_Layer: 0
   m_Name: SpareParts
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114224283276107402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383590193469742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cc4c382bfef9c499eaa5dbacade1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flungSpeed_UnityUnitPerSecond: 5
+  rotation_DegreePerSecond: 720
 --- !u!212 &212364668541110258
 SpriteRenderer:
   m_ObjectHideFlags: 1

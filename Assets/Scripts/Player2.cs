@@ -5,9 +5,13 @@ using UnityEngine;
 public class Player2 : MonoBehaviour {
 
 	public GameObject followTarget;
+    public BoxCollider2D weaponBox;
     public Vector3 oldPosition;
     public float followDelay = 0.2f;
     public float followCounter = 0f;
+
+    public float attackCounter = 0f;
+    public float attackThreshold = .5f;
 
 	[Header("Movement")]
 	[SerializeField] float movementSpeed = 0.1f;
@@ -34,6 +38,7 @@ public class Player2 : MonoBehaviour {
         }
         oldPosition = new Vector3(Mathf.Lerp(oldPosition.x, followTarget.transform.position.x, 0.1f), oldPosition.y, oldPosition.z);
 		translatePlayer (oldPosition - offsetPos);
+        attack();
 	}
 
 	void rotatePlayer() {
@@ -72,6 +77,13 @@ public class Player2 : MonoBehaviour {
 
     void attack()
     {
+        if(Input.GetButtonDown("Player2Attack") && attackCounter > attackThreshold)
+        {
+            attackCounter = 0;
+            weaponBox.enabled = true;
+        }
+        attackCounter += Time.deltaTime;
+        weaponBox.enabled = false;
 
     }
 }
