@@ -100,6 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebd1ef0fb4a0394ba7bf634fd364923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minBreakTime: 10
+  maxBreakTime: 20
+  nextBreakTime: 0
+  shellHealth: 5
+  maxShellHealth: 5
+  invincibilityCounter: 0
   dampenRate: 0.008
   brokeSteerAccelRate: 0.003
   slowAccelRate: 0.006

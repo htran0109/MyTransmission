@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4845990746723288}
   - component: {fileID: 114315844828809478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sk8erBoi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4984808698183336}
   - component: {fileID: 212215189170967840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
