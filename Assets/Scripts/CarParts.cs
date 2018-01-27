@@ -28,9 +28,11 @@ public class CarParts : MonoBehaviour {
     int debugPartsIndex = 0;
 
     private CarMovement carMove;
+	private PartsFlungOutOfCar partsFlinger; 
 	// Use this for initialization
 	void Start () {
         carMove = GetComponent<CarMovement>();
+		partsFlinger = GetComponentInChildren<PartsFlungOutOfCar> ();
         for(int i = 0; i < partsArray.Length; i++)
         {
             partsArray[i] = true;
@@ -85,6 +87,7 @@ public class CarParts : MonoBehaviour {
             if (workingParts.Count > 0)
             {
                 float brokenPart = Random.Range(0, workingParts.Count);
+				partsFlinger.throwParts ((partsList)brokenPart);
                 partsArray[(int)workingParts[(int)brokenPart]] = false;
                 Debug.Log("Broke:" + (int)workingParts[(int)brokenPart]);
             }
