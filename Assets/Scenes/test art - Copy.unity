@@ -572,11 +572,6 @@ Prefab:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 475350236}
-    - target: {fileID: 114326621996808652, guid: 22140943de93c104e9e68ac576a3c3ad,
-        type: 2}
-      propertyPath: topScreenY
-      value: 0.89
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22140943de93c104e9e68ac576a3c3ad, type: 2}
   m_IsPrefabParent: 0

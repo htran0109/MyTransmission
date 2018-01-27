@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnTime: 3
   maxSpawnTime: 5
-  topScreenY: 3
+  topScreenY: 0.89
   leftBoundaryX: -3
   rightBoundaryX: 3
   maxRocksRow: 4
