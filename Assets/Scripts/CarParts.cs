@@ -9,13 +9,14 @@ public class CarParts : MonoBehaviour {
     public float nextBreakTime;
     private float breakCounter;
 
-    public float shellHealth;
+    public int shellHealth;
 	[SerializeField]
-    public float maxShellHealth;
+    public int maxShellHealth;
 
     public float invincibilityCounter = 0;
+    public float healthInvincCounter = 0;
 
-
+    public Animator animator;
     public float dampenRate;
     public float brokeSteerAccelRate;
     public float slowAccelRate;//for broken parts
@@ -41,7 +42,10 @@ public class CarParts : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Space))
+        animator.SetBool("left_wheel", partsArray[(int)partsList.LEFT_WHEEL]);
+        animator.SetBool("right_wheel", partsArray[(int)partsList.RIGHT_WHEEL]);
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //debugPartsIndex = (int)(Random.Range(0, 4));
 
@@ -61,6 +65,7 @@ public class CarParts : MonoBehaviour {
             breakCounter += Time.deltaTime;
         }
         invincibilityCounter += Time.deltaTime;
+        healthInvincCounter += Time.deltaTime;
 	}
 
    public void damageCar()
@@ -143,13 +148,19 @@ public class CarParts : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        Debug.Log("Trigger hit");
+        Debug.Log(coll.gameObject.name + ": Trigger hit");
         if (coll.gameObject.tag == "obstacle")//rock hit car
         {
             //do some damage step
-			shellHealth--; 
+            if (healthInvincCounter > 0.5)
+            {
+                healthInvincCounter = 0;
+                shellHealth--;
+                animator.SetInteger("shell_health", shellHealth);
+            }
 
-			if (shellHealth <= 0) {
+
+            if (shellHealth <= 0) {
 				Destroy(coll.gameObject);
 				Debug.Log ("GAME OVER");
 			}
