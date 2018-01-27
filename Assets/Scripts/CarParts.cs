@@ -24,7 +24,7 @@ public class CarParts : MonoBehaviour {
     public float slowMaxSpeed; //broken stuff
     public float normalMaxSpeed; // for normal parts
     public bool[] partsArray;
-    enum partsList {LEFT_WHEEL, RIGHT_WHEEL, LIGHTS, STEERING, TRACTION}
+    public enum partsList {LEFT_WHEEL, RIGHT_WHEEL, LIGHTS, STEERING, TRACTION}
     int debugPartsIndex = 0;
 
     private CarMovement carMove;
@@ -168,4 +168,24 @@ public class CarParts : MonoBehaviour {
             damageCar();
         }
     }
+
+	public bool restoreParts(partsList typeRestored){
+
+		if (partsArray [(int)typeRestored]) {
+			return false;
+		}
+
+		partsArray [(int)typeRestored] = true; 
+	
+		switch (typeRestored) {
+		case partsList.LEFT_WHEEL:
+			animator.SetBool("left_wheel", partsArray[(int)partsList.LEFT_WHEEL]);
+			break; 
+		case partsList.RIGHT_WHEEL:
+			animator.SetBool("right_wheel", partsArray[(int)partsList.RIGHT_WHEEL]);
+			break; 
+		}
+
+		return true;
+	}
 }

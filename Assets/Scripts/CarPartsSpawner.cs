@@ -55,7 +55,7 @@ public class CarPartsSpawner: MonoBehaviour {
 			farthestPartsFromLeft -= transform.right * distanceBetweenSparePartsWhenSpawned / 2;
 
 			farthestPartsFromLeft -= transform.right * (numberOfPartsSpawned/ 2 - 1) * distanceBetweenSparePartsWhenSpawned;
-		} else {
+		} else {	
 			farthestPartsFromLeft -= transform.right * (numberOfPartsSpawned - 1)/2 * distanceBetweenSparePartsWhenSpawned;
 		}
 			
