@@ -50,7 +50,7 @@ public class PartsMovingBehavior : MonoBehaviour {
 		}
 
 		if (hasLanded) {
-			this.transform.position += movementSpeed * transform.up * -1 * Time.deltaTime;
+			this.transform.position += movementSpeed * Vector3.up* -1 * Time.deltaTime;
 		}
 	}
 

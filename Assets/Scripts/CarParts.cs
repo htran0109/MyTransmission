@@ -10,6 +10,7 @@ public class CarParts : MonoBehaviour {
     private float breakCounter;
 
     public float shellHealth;
+	[SerializeField]
     public float maxShellHealth;
 
     public float invincibilityCounter = 0;
@@ -34,6 +35,8 @@ public class CarParts : MonoBehaviour {
             partsArray[i] = true;
         }
         nextBreakTime = Random.Range(minBreakTime, maxBreakTime);
+
+		shellHealth = maxShellHealth;
 	}
 	
 	// Update is called once per frame
@@ -144,8 +147,13 @@ public class CarParts : MonoBehaviour {
         if (coll.gameObject.tag == "obstacle")//rock hit car
         {
             //do some damage step
+			shellHealth--; 
 
-            //Destroy(coll.gameObject);
+			if (shellHealth <= 0) {
+				Destroy(coll.gameObject);
+				Debug.Log ("GAME OVER");
+			}
+            
             damageCar();
         }
     }
