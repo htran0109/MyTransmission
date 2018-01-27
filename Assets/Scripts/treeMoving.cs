@@ -29,7 +29,7 @@ public class treeMoving : MonoBehaviour {
 		this.transform.position = Vector3.Lerp(this.transform.localPosition, startPosition+offSet, timer/duration);
 		this.transform.localScale = Vector3.Lerp(this.transform.localScale, endScale, timer/duration);
 
-		if (timer/duration >= 1) {
+		if (timer/duration*100 >= 1.0f) {
 			Destroy (this.gameObject);
 		}
 	}

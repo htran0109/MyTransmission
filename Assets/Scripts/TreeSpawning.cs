@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TreeSpawning : MonoBehaviour {
-	[SerializeField] GameObject treePrefab;
+	[SerializeField] GameObject[] treePrefabs;
 
 	[SerializeField] float minTimer;
 	[SerializeField] float maxTimer;
@@ -28,8 +28,10 @@ public class TreeSpawning : MonoBehaviour {
 				multipler = -1;
 			}
 
+			int treeToSpawn = Random.Range (0, treePrefabs.Length);
+
 			// Spawn the tree!
-			Instantiate(treePrefab, new Vector3(multipler*Random.Range(xStart, xStart+10), yStart, 0), Quaternion.identity);
+			Instantiate(treePrefabs[treeToSpawn], new Vector3(multipler*Random.Range(xStart, xStart+10), yStart, 0), Quaternion.identity);
 			timer = Random.Range (minTimer, maxTimer);
 		}
 	}
