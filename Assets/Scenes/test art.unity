@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114690888701347660, guid: cec5fdf9c3b6d451da9dffc1a35de2cf,
+        type: 2}
+      propertyPath: treePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4588795927377942, guid: cec5fdf9c3b6d451da9dffc1a35de2cf, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.1264069
@@ -152,6 +157,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114690888701347660, guid: cec5fdf9c3b6d451da9dffc1a35de2cf,
+        type: 2}
+      propertyPath: treePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1266487068632902, guid: 7259712259a7e4f5184f2381ef5b869a,
+        type: 2}
+    - target: {fileID: 114690888701347660, guid: cec5fdf9c3b6d451da9dffc1a35de2cf,
+        type: 2}
+      propertyPath: treePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1730533719990626, guid: a9193d6b6076743299478f6ad240acf0,
+        type: 2}
+    - target: {fileID: 114690888701347660, guid: cec5fdf9c3b6d451da9dffc1a35de2cf,
+        type: 2}
+      propertyPath: treePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1307887810387408, guid: f1597df2d25db46a4b3b4446c1e715b4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cec5fdf9c3b6d451da9dffc1a35de2cf, type: 2}
   m_IsPrefabParent: 0
@@ -4433,7 +4456,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &2011757372
 GameObject:
