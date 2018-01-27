@@ -63,8 +63,8 @@ public class CarPartsSpawner: MonoBehaviour {
 
 			// spawn the object
 			//TODO: Create ObjectPool
-			GameObject newObject = GameObject.Instantiate(sparePartsPrefab);
-			newObject.transform.position = spawnPosition;
+			PartsMovingBehavior newObject = GameObject.Instantiate(sparePartsPrefab,this.transform.position,Quaternion.identity).GetComponent<PartsMovingBehavior>();
+			newObject.flungTo (spawnPosition);
 		}
 
 	}
