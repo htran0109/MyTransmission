@@ -24,6 +24,7 @@ public class PartsMovingBehavior : MonoBehaviour {
 		this.originalScale = transform.localScale;
 		isMoving = false; 
 		hasLanded = false; 
+		direction = new Vector3(0, (.52f-.89f), -1.17f);
 	}
 
 	// Update is called once per frame
@@ -32,38 +33,42 @@ public class PartsMovingBehavior : MonoBehaviour {
 	private Vector3 scale;
 	void Update () {
 		if (isMoving) {
-			if (transform.position == targetPosition) {
-				Debug.Log ("target has been reacehed");
-				isMoving = false;
-                hasLanded = true;
-				return;
-			}
+
 			float step = flungSpeed_UnityUnitPerSecond * Time.deltaTime;
-			float zoomAmount = calculateZoom (totalStep)/totalDistance;
-			Debug.Log ("zomming: " + zoomAmount);	
-			transform.position = Vector3.MoveTowards (transform.position, targetPosition, step);
+			float additionalHeight = calculateAdditionalHeight (totalStep);
+			Vector3 stepVector = (targetPosition - originalPosition).normalized;
+			Vector3 displacement = new Vector3 (originalPosition.x + stepVector.x * totalStep, originalPosition.y + stepVector.y * totalStep * additionalHeight, originalPosition.z + stepVector.z * totalStep);
+			transform.position = displacement;
+			//Debug.Log ("zomming: " + zoomAmount);	
+			//transform.position = Vector3.MoveTowards (transform.position, targetPosition, step);
 			transform.Rotate (new Vector3 (0, 0, this.rotationDirection * rotation_DegreePerSecond * Time.deltaTime));
-			transform.localScale =  new Vector3(originalScale.x + zoomAmount , 
-				originalScale.y + zoomAmount ,
-				this.transform.localScale.z);
+
 			Debug.Log (transform.localScale);
 			totalStep += step;
+			if (transform.position.z >= 0.0f || totalStep >= totalDistance) {
+				Debug.Log ("target has been reacehed");
+				isMoving = false;
+				hasLanded = true;
+				return;
+			}
 		}
 
 		if (hasLanded) {
-			this.transform.position += movementSpeed * Vector3.up* -1 * Time.deltaTime;
+			this.transform.position += movementSpeed * direction  * Time.deltaTime;
 		}
 	}
 
 
 	public void flungTo(Vector3 targetPosition){
+		Debug.Log ("current position: " + this.transform.position);
+		Debug.Log ("its target position: " + targetPosition);
 		this.targetPosition = targetPosition;
 		rotationDirection =(int) Mathf.Pow (-1.0F, Random.Range (1, 5));
 		isMoving = true; 
 		totalDistance = Vector3.Distance (targetPosition, transform.position);
 	}
 
-	float calculateZoom(float currentTotalStep){
+	float calculateAdditionalHeight(float currentTotalStep){
 		Debug.Log ("current Step: " + currentTotalStep);
 		return Mathf.Pow ( (totalStep / totalDistance * 2) - 1, 2) * -1 +  1;
 	}

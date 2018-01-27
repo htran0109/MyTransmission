@@ -53,9 +53,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scalingPerSecond: 25
-  upSpeed: 20
+  upSpeed: 5
   flingModifier: 10
-  downwardsPull: 60
+  downwardsPull: 50
   objectLifeTime: 2
 --- !u!212 &212057903918865194
 SpriteRenderer:
