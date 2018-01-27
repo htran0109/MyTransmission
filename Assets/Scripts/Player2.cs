@@ -6,17 +6,17 @@ public class Player2 : MonoBehaviour {
 
 	public GameObject followTarget;
 
+	[Header("Movement")]
 	[SerializeField] float movementSpeed = 0.1f;
 	[SerializeField] float maxXLimit = 2f;
 	[SerializeField] float decay = 0.1f;
 
+	[Header("Position")]
 	[SerializeField] Vector3 offsetPos = new Vector3(0, 2, 0);		// Target position for player to follow
 	private Vector3 movementOffset = new Vector3 (0, 0, 0);			// Additional offset for player movement
 
-	[SerializeField] float rotationSpeed = 1f;
-	[SerializeField] float rotationLimit = 30f;
-
-
+	float rotationSpeed = 1f;
+	float rotationLimit = 30f;
 
 	// Use this for initialization
 	void Start () {
@@ -53,12 +53,12 @@ public class Player2 : MonoBehaviour {
 			movementOffset.x = Mathf.Clamp (movementOffset.x + decay, -maxXLimit, 0);
 		}
 
-		if (Input.GetKey (KeyCode.A)) {
+		if (Input.GetButton ("Player2_Left")) {
 			movementOffset.x = Mathf.Clamp(movementOffset.x-movementSpeed, -maxXLimit, maxXLimit);
-		} else if (Input.GetKey (KeyCode.D)) {
+		} else if (Input.GetButton ("Player2_Right")) {
 			movementOffset.x = Mathf.Clamp(movementOffset.x+movementSpeed, -maxXLimit, maxXLimit);
 		}
-			
+
 		this.transform.position = targetPosition + movementOffset;
 	}
 }
