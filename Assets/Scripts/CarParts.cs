@@ -170,6 +170,11 @@ public class CarParts : MonoBehaviour {
     }
 
 	public void restoreParts(partsList typeRestored){
+
+		if (partsArray [(int)typeRestored]) {
+			return false;
+		}
+
 		partsArray [(int)typeRestored] = true; 
 	
 		switch (typeRestored) {
@@ -180,5 +185,7 @@ public class CarParts : MonoBehaviour {
 			animator.SetBool("right_wheel", partsArray[(int)partsList.RIGHT_WHEEL]);
 			break; 
 		}
+
+		return true;
 	}
 }
