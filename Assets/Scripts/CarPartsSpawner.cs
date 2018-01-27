@@ -23,25 +23,40 @@ public class CarPartsSpawner: MonoBehaviour {
 		if (collider2D.gameObject.layer == LAYER_OBJECT_PLAYER) {
 			// flung parts 
 			int numberOfPartsSpawned = Random.Range(0,maximumNumberOfPartsSpawned);
-
+			Debug.Log ("numbberOfPartsSpaned: " + numberOfPartsSpawned);
 			if (numberOfPartsSpawned == 0) {
 				return; 
 			}
 
-			spawnSpareParts ( numberOfPartsSpawned);
+			spawnSpareParts (numberOfPartsSpawned);
 		}
 	}
 
 	// taking the center of the car as referencePoint,  
 	void spawnSpareParts(int numberOfPartsSpawned) {
 		Vector3 startingPosition = this.transform.position; 
-		Vector3 movingDirection = this.transform.forward; 
+		Vector3 movingDirection = this.transform.up; 
 
+		startingPosition += movingDirection * sparePartsSpawnDistance;
 
+		Vector3 farthestPartsFromLeft = startingPosition; 
+		if ((numberOfPartsSpawned % 2) == 0) { //is even
+	
+			farthestPartsFromLeft -= transform.right * distanceBetweenSparePartsWhenSpawned / 2;
+
+			farthestPartsFromLeft -= transform.right * (numberOfPartsSpawned/ 2 - 1) * distanceBetweenSparePartsWhenSpawned;
+		} else {
+			farthestPartsFromLeft -= transform.right * (numberOfPartsSpawned - 1)/2 * distanceBetweenSparePartsWhenSpawned;
+		}
+			
+		Vector3 SpawnPosition = farthestPartsFromLeft;
 		for (int i = 0; i < numberOfPartsSpawned; i++) {
-			Vector3 spawnPosition = startingPosition + transform.forward * this.sparePartsSpawnDistance;
-			//spawnPosition += t;
+			Vector3 spawnPosition = farthestPartsFromLeft + transform.right * i * distanceBetweenSparePartsWhenSpawned;
 
+			// spawn the object
+			//TODO: Create ObjectPool
+			GameObject newObject = GameObject.Instantiate(sparePartsPrefab);
+			newObject.transform.position = spawnPosition;
 		}
 
 	}
