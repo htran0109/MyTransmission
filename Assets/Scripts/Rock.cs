@@ -29,7 +29,7 @@ public class Rock : MonoBehaviour {
             //do some damage step
 
             Destroy(this.gameObject);
-            playerCar.damageCar();
+            //playerCar.damageCar();
         }
         if(coll.gameObject.tag == "skater") //rock hit skater
         {
