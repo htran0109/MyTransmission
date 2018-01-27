@@ -168,4 +168,17 @@ public class CarParts : MonoBehaviour {
             damageCar();
         }
     }
+
+	public void restoreParts(partsList typeRestored){
+		partsArray [(int)typeRestored] = true; 
+	
+		switch (typeRestored) {
+		case partsList.LEFT_WHEEL:
+			animator.SetBool("left_wheel", partsArray[(int)partsList.LEFT_WHEEL]);
+			break; 
+		case partsList.RIGHT_WHEEL:
+			animator.SetBool("right_wheel", partsArray[(int)partsList.RIGHT_WHEEL]);
+			break; 
+		}
+	}
 }

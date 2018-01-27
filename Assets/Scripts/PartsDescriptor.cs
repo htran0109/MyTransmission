@@ -23,7 +23,7 @@ public class PartsDescriptor : MonoBehaviour {
 		if (coll.tag == "playerCar") {
 			Player2 possiblePlayer2 = coll.GetComponent<Player2> (); 
 			if (possiblePlayer2 != null) {
-				// link back to player 1
+				possiblePlayer2.restoreCarPartsToPlayer1 (this.partsType);
 				Destroy (this.gameObject);
 			}
 

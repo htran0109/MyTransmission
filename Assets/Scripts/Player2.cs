@@ -30,6 +30,8 @@ public class Player2 : MonoBehaviour {
 	[SerializeField]
 	private bool isHit;
 
+	[SerializeField]
+	private CarParts player1Carparts; 
 
 	float rotationSpeed = 1f;
 	float rotationLimit = 30f;
@@ -126,5 +128,9 @@ public class Player2 : MonoBehaviour {
 		currentParalyzedDuration = 0.0f; 
 		isHit = true; 
 		Debug.Log ("GOT HIT");
+	}
+
+	public void restoreCarPartsToPlayer1(CarParts.partsList type) {
+		
 	}
 }
