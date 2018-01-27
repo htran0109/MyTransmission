@@ -22,12 +22,23 @@ public class Player2 : MonoBehaviour {
 	[SerializeField] Vector3 offsetPos = new Vector3(0, 2, 0);		// Target position for player to follow
 	private Vector3 movementOffset = new Vector3 (0, 0, 0);			// Additional offset for player movement
 
+
+	[Header("when getting hit by car")]
+	[SerializeField]
+	private float paralyzedCooldown;
+	private float currentParalyzedDuration;
+	[SerializeField]
+	private bool isHit;
+
+
 	float rotationSpeed = 1f;
 	float rotationLimit = 30f;
 
 	// Use this for initialization
 	void Start () {
         oldPosition = followTarget.transform.position;
+
+		this.currentParalyzedDuration = 0.0f;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +47,15 @@ public class Player2 : MonoBehaviour {
         {
             followCounter += Time.deltaTime;
         }
+
+		if (isHit && this.currentParalyzedDuration < paralyzedCooldown) {
+			this.currentParalyzedDuration += Time.deltaTime;
+
+			if (this.currentParalyzedDuration >= paralyzedCooldown) {
+				isHit = false; 
+				currentParalyzedDuration = 0.0f;
+			}
+		}
         oldPosition = new Vector3(Mathf.Lerp(oldPosition.x, followTarget.transform.position.x, 0.1f), oldPosition.y, oldPosition.z);
 		translatePlayer (oldPosition - offsetPos);
         attack();
@@ -66,10 +86,12 @@ public class Player2 : MonoBehaviour {
 			movementOffset.x = Mathf.Clamp (movementOffset.x + decay, -maxXLimit, 0);
 		}
 
-		if (Input.GetButton ("Player2_Left")) {
-			movementOffset.x = Mathf.Clamp(movementOffset.x-movementSpeed, -maxXLimit, maxXLimit);
-		} else if (Input.GetButton ("Player2_Right")) {
-			movementOffset.x = Mathf.Clamp(movementOffset.x+movementSpeed, -maxXLimit, maxXLimit);
+		if (!isHit) {
+			if (Input.GetButton ("Player2_Left")) {
+				movementOffset.x = Mathf.Clamp(movementOffset.x-movementSpeed, -maxXLimit, maxXLimit);
+			} else if (Input.GetButton ("Player2_Right")) {
+				movementOffset.x = Mathf.Clamp(movementOffset.x+movementSpeed, -maxXLimit, maxXLimit);
+			}
 		}
 
 		this.transform.position = targetPosition + movementOffset;
@@ -96,4 +118,13 @@ public class Player2 : MonoBehaviour {
         }
 
     }
+
+	void OnTriggerEnter2D(Collider2D coll){
+		if (coll.gameObject.tag == "playerCar" ) {
+			return; 
+		} 
+		currentParalyzedDuration = 0.0f; 
+		isHit = true; 
+		Debug.Log ("GOT HIT");
+	}
 }
