@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flungSpeed_UnityUnitPerSecond: 5
   rotation_DegreePerSecond: 720
+  movementSpeed: 2
 --- !u!212 &212364668541110258
 SpriteRenderer:
   m_ObjectHideFlags: 1

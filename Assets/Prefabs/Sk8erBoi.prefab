@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4880425444066288}
   - component: {fileID: 212940135562975658}
   - component: {fileID: 61949723618407372}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: WeaponBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,18 +131,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016550124, y: 1.0757565}
+  m_Offset: {x: 0.0631156, y: 4.129431}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9861125, y: 2.1516132}
+  m_Size: {x: 8.199666, y: 8.258963}
   m_EdgeRadius: 0
 --- !u!114 &114315844828809478
 MonoBehaviour:
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
+  weaponBox: {fileID: 61949723618407372}
   oldPosition: {x: 0, y: 0, z: 0}
   followDelay: 0.2
   followCounter: 0
@@ -164,7 +165,7 @@ MonoBehaviour:
   movementSpeed: 0.1
   maxXLimit: 2
   decay: 0.05
-  offsetPos: {x: 0, y: 2, z: 0}
+  offsetPos: {x: 0, y: 4, z: 0}
 --- !u!212 &212293922547836166
 SpriteRenderer:
   m_ObjectHideFlags: 1

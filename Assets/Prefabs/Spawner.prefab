@@ -60,6 +60,7 @@ MonoBehaviour:
   maxRocksRow: 4
   rock: {fileID: 1735028178722248, guid: ef74f711a18b7854dac2dbf13a6447b4, type: 2}
   car: {fileID: 1701816179862304, guid: 0bfe83ca289ed2c4595065d99663aad0, type: 2}
+  explosion: {fileID: 0}
 --- !u!212 &212067912607072224
 SpriteRenderer:
   m_ObjectHideFlags: 1

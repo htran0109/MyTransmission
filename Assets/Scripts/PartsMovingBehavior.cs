@@ -34,7 +34,8 @@ public class PartsMovingBehavior : MonoBehaviour {
 		if (isMoving) {
 			if (transform.position == targetPosition) {
 				Debug.Log ("target has been reacehed");
-				isMoving = false; 
+				isMoving = false;
+                hasLanded = true;
 				return;
 			}
 			float step = flungSpeed_UnityUnitPerSecond * Time.deltaTime;
