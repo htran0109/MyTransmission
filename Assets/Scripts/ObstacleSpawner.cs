@@ -18,9 +18,11 @@ public class ObstacleSpawner : MonoBehaviour {
 
     public GameObject rock; //prefab of a rock to spawn at the top of the screen
     public GameObject car; //prefab of a car
-    
-	// Use this for initialization
-	void Start () {
+
+    public ParticleSystem explosion;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -49,7 +51,8 @@ public class ObstacleSpawner : MonoBehaviour {
         }
         else
         {
-            Instantiate(car, new Vector3(Random.Range(leftBoundaryX, rightBoundaryX), topScreenY, 0), Quaternion.identity);
+            GameObject npcCar = Instantiate(car, new Vector3(Random.Range(leftBoundaryX, rightBoundaryX), topScreenY, 0), Quaternion.identity);
+            npcCar.GetComponent<CarPartsSpawner>().explosion = explosion;
             rocksRow = 0;
         }
     }

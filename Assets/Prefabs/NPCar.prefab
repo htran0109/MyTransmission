@@ -96,6 +96,8 @@ MonoBehaviour:
     type: 2}
   maximumNumberOfPartsSpawned: 5
   distanceBetweenSparePartsWhenSpawned: 1
+  explosion: {fileID: 198749163075311164, guid: 679a461f3b7ab4ee482e3e75bde89c50,
+    type: 2}
 --- !u!212 &212240622727393908
 SpriteRenderer:
   m_ObjectHideFlags: 1

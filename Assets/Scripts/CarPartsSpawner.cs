@@ -26,15 +26,15 @@ public class CarPartsSpawner: MonoBehaviour {
 			// flung parts
 			int numberOfPartsSpawned = Random.Range(1, maximumNumberOfPartsSpawned);
 			Debug.Log ("numbberOfPartsSpaned: " + numberOfPartsSpawned);
-			if (numberOfPartsSpawned == 0) {
-				return; 
-			}
+            // Play particle effect at the point
+            explosion.transform.position = transform.position;
+            explosion.Play();
+            if (collider2D.gameObject.tag != "playerCar")
+            {
+                spawnSpareParts(numberOfPartsSpawned);
+            }
 
-			spawnSpareParts (numberOfPartsSpawned);
 
-			// Play particle effect at the point
-			explosion.transform.position = transform.position;
-			explosion.Play();
 
 			Destroy (this.gameObject);
 		}

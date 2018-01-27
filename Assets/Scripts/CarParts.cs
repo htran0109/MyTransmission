@@ -76,7 +76,7 @@ public class CarParts : MonoBehaviour {
 
             if (workingParts.Count > 0)
             {
-                float brokenPart = Random.Range(0, workingParts.Count + 1);
+                float brokenPart = Random.Range(0, workingParts.Count);
                 partsArray[(int)workingParts[(int)brokenPart]] = false;
                 Debug.Log("Broke:" + (int)brokenPart);
             }
@@ -145,7 +145,7 @@ public class CarParts : MonoBehaviour {
         {
             //do some damage step
 
-            Destroy(coll.gameObject);
+            //Destroy(coll.gameObject);
             damageCar();
         }
     }

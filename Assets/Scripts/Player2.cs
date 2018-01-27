@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player2 : MonoBehaviour {
 
 	public GameObject followTarget;
+    public Vector3 oldPosition;
+    public float followDelay = 0.2f;
+    public float followCounter = 0f;
 
 	[Header("Movement")]
 	[SerializeField] float movementSpeed = 0.1f;
@@ -20,12 +23,17 @@ public class Player2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        oldPosition = followTarget.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		translatePlayer (followTarget.transform.position - offsetPos);
+        if(followCounter < followDelay)
+        {
+            followCounter += Time.deltaTime;
+        }
+        oldPosition = new Vector3(Mathf.Lerp(oldPosition.x, followTarget.transform.position.x, 0.1f), oldPosition.y, oldPosition.z);
+		translatePlayer (oldPosition - offsetPos);
 	}
 
 	void rotatePlayer() {
@@ -61,4 +69,9 @@ public class Player2 : MonoBehaviour {
 
 		this.transform.position = targetPosition + movementOffset;
 	}
+
+    void attack()
+    {
+
+    }
 }
