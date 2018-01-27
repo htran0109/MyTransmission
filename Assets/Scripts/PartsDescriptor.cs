@@ -6,7 +6,7 @@ using UnityEngine;
 public class PartsDescriptor : MonoBehaviour {
 	public enum DUMMY_PARTS_TYPE {DUMMY}
 
-	public DUMMY_PARTS_TYPE partsType; 
+	public CarParts.partsList partsType; 
 	public Sprite[] listOfPartsSpriteInOrderOfEnum;
 
 	// Use this for initialization
@@ -15,7 +15,7 @@ public class PartsDescriptor : MonoBehaviour {
 	}
 
 	void RandomizeType() {
-		partsType = (DUMMY_PARTS_TYPE) UnityEngine.Random.Range(0,Enum.GetNames(typeof(DUMMY_PARTS_TYPE)).Length - 1);
+		partsType = (CarParts.partsList) UnityEngine.Random.Range(0,Enum.GetNames(typeof(CarParts.partsList)).Length - 1);
 		GetComponent<SpriteRenderer> ().sprite = listOfPartsSpriteInOrderOfEnum [(int)partsType];
 	}
 	
