@@ -25,6 +25,8 @@ public class CarMovement : MonoBehaviour {
     public bool speedLimit = true; //car cant steer past a certain speed. Disabled if traction is broken
 
     
+	[SerializeField] float maxXLimit = 10f;
+
     private float vertMov = 0;
     private Rigidbody2D rb2d; //for physics on the object (used for acceleration)
 	// Use this for initialization
@@ -93,6 +95,10 @@ public class CarMovement : MonoBehaviour {
                 horizMov = rightMaxSpeed;
             }
         }
-            transform.Translate(horizMov, vertMov, 0); //move according to the given speed.
+        transform.Translate(horizMov, vertMov, 0); //move according to the given speed.
+
+		// Clamp within the limits
+		float x = Mathf.Clamp(transform.localPosition.x, -maxXLimit, maxXLimit);
+		transform.localPosition = new Vector3 (x, transform.localPosition.y, transform.localPosition.z);
     }
 }
