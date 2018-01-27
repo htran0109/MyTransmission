@@ -130,7 +130,7 @@ public class Player2 : MonoBehaviour {
 		Debug.Log ("GOT HIT");
 	}
 
-	public void restoreCarPartsToPlayer1(CarParts.partsList type) {
-		
+	public bool restoreCarPartsToPlayer1(CarParts.partsList type) {
+		return player1Carparts.restoreParts (type);
 	}
 }

@@ -169,7 +169,7 @@ public class CarParts : MonoBehaviour {
         }
     }
 
-	public void restoreParts(partsList typeRestored){
+	public bool restoreParts(partsList typeRestored){
 
 		if (partsArray [(int)typeRestored]) {
 			return false;
