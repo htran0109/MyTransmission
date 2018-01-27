@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 50346475183177698}
   - component: {fileID: 61030871898871338}
   - component: {fileID: 114864857748083822}
+  - component: {fileID: 114411972733995312}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: playerCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +53,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1114804083011638}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -72,7 +73,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -88,6 +89,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114411972733995312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114804083011638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebd1ef0fb4a0394ba7bf634fd364923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBreakTime: 10
+  maxBreakTime: 20
+  nextBreakTime: 0
+  shellHealth: 5
+  maxShellHealth: 5
+  invincibilityCounter: 0
+  dampenRate: 0.008
+  brokeSteerAccelRate: 0.003
+  slowAccelRate: 0.006
+  normalAccelRate: 0.01
+  slowMaxSpeed: 0.04
+  normalMaxSpeed: 0.15
+  partsArray: 0000000000
 --- !u!114 &114864857748083822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +124,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5ec309dc129464aa1c9f5c09df1272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xVelocity: 0
+  tiltAccelRate: 0.02
+  leftAccelRate: 0.01
+  rightAccelRate: 0.01
+  dampenRate: 0.008
+  leftMaxSpeed: 0.2
+  rightMaxSpeed: 0.2
+  horizMov: 0
+  speedLimit: 1
 --- !u!212 &212962887749064224
 SpriteRenderer:
   m_ObjectHideFlags: 1
