@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CarMovement : MonoBehaviour {
-
-	[SerializeField]
+    //[SerializeField]
+   // float slowAccelRate = .005f; //To be implemented in CarParts.cs
+    [SerializeField]
     float xVelocity = 0f;
+    [SerializeField]
+    public float tiltAccelRate = .02f; //to be set in CarParts.cs, how much the car turns because of missing parts
 	[SerializeField]
-    float accelRate = .1f;
+    public float leftAccelRate = .1f;
+    [SerializeField]
+    public float rightAccelRate = .1f;
 	[SerializeField]
-    float dampenRate = .02f;
+    public float dampenRate = .008f;
 	[SerializeField]
-    float vertSpeed = .25f;
-	[SerializeField]
-    float maxSpeed = .4f;
+    public float leftMaxSpeed = .4f;
+    [SerializeField]
+    public float rightMaxSpeed = .4f;
 	[SerializeField]
     private float horizMov = 0;
+    [SerializeField]
+    public bool speedLimit = true; //car cant steer past a certain speed. Disabled if traction is broken
+
     
     private float vertMov = 0;
     private Rigidbody2D rb2d; //for physics on the object (used for acceleration)
@@ -32,21 +40,18 @@ public class CarMovement : MonoBehaviour {
     void readKeys()
     {
         xVelocity = horizMov; //keep old velocity for this frame
-        vertMov = Input.GetAxis("Vertical") * vertSpeed;
         if(Input.GetButton("Left")) //check for acceleration left or right
         {
-            horizMov = -1;
+            horizMov = -leftAccelRate;
         }
         else if (Input.GetButton("Right"))
         {
-            horizMov = 1;
+            horizMov = rightAccelRate;
         }
         else
         {
             horizMov = 0;
         }
-        horizMov *= accelRate;
-        Debug.Log(horizMov);
         if (Mathf.Abs(horizMov) == 0)//not moving left or right, straighten car 
         {
             if(Mathf.Abs(xVelocity) < dampenRate)
@@ -55,7 +60,7 @@ public class CarMovement : MonoBehaviour {
             }
             else
             {
-                if(xVelocity< 0)
+                if(xVelocity< 0) //dampen right to account for moving left
                 {
                     horizMov = xVelocity + dampenRate;
                 }
@@ -67,25 +72,25 @@ public class CarMovement : MonoBehaviour {
         }
         else if (xVelocity < 0) 
         {
-            if(xVelocity + horizMov > -maxSpeed)
+            if(xVelocity + horizMov > -leftMaxSpeed || !speedLimit)
             {
                 horizMov = xVelocity + horizMov;
             }
             else
             {
-                horizMov = -maxSpeed;
+                horizMov = -leftMaxSpeed;
             }
 
         }
         else
         {
-            if (xVelocity + horizMov < maxSpeed)
+            if (xVelocity + horizMov < rightMaxSpeed || !speedLimit)
             {
                 horizMov = xVelocity + horizMov;
             }
             else
             {
-                horizMov = maxSpeed;
+                horizMov = rightMaxSpeed;
             }
         }
             transform.Translate(horizMov, vertMov, 0); //move according to the given speed.

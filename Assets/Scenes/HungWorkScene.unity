@@ -113,6 +113,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1089737084 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1114804083011638, guid: 8569d9676a448404ea6a8613a1b3819f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1393561528}
+--- !u!114 &1089737085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089737084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebd1ef0fb4a0394ba7bf634fd364923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dampenRate: 0.008
+  brokeSteerAccelRate: 0.003
+  slowAccelRate: 0.006
+  normalAccelRate: 0.01
+  slowMaxSpeed: 0.04
+  normalMaxSpeed: 0.15
+  partsArray: 0000000000
 --- !u!1001 &1393561528
 Prefab:
   m_ObjectHideFlags: 0
@@ -151,6 +174,41 @@ Prefab:
     - target: {fileID: 4367917072033384, guid: 8569d9676a448404ea6a8613a1b3819f, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114864857748083822, guid: 8569d9676a448404ea6a8613a1b3819f,
+        type: 2}
+      propertyPath: slowAccelRate
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 114864857748083822, guid: 8569d9676a448404ea6a8613a1b3819f,
+        type: 2}
+      propertyPath: dampenRate
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 50346475183177698, guid: 8569d9676a448404ea6a8613a1b3819f,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114864857748083822, guid: 8569d9676a448404ea6a8613a1b3819f,
+        type: 2}
+      propertyPath: leftMaxSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114864857748083822, guid: 8569d9676a448404ea6a8613a1b3819f,
+        type: 2}
+      propertyPath: leftAccelRate
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114864857748083822, guid: 8569d9676a448404ea6a8613a1b3819f,
+        type: 2}
+      propertyPath: rightAccelRate
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114864857748083822, guid: 8569d9676a448404ea6a8613a1b3819f,
+        type: 2}
+      propertyPath: rightMaxSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8569d9676a448404ea6a8613a1b3819f, type: 2}
