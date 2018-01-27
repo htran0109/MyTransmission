@@ -12,13 +12,18 @@ public class PartsMovingBehavior : MonoBehaviour {
 	private float flungSpeed_UnityUnitPerSecond;
 	[SerializeField]
 	private float rotation_DegreePerSecond;
+	[SerializeField]
+	private float movementSpeed; 
 
 	private bool isMoving; 
+	private bool hasLanded; 
+
 	private int rotationDirection;
 	void Awake() {
 		this.originalPosition = transform.position;
 		this.originalScale = transform.localScale;
 		isMoving = false; 
+		hasLanded = false; 
 	}
 
 	// Update is called once per frame
@@ -42,6 +47,10 @@ public class PartsMovingBehavior : MonoBehaviour {
 				this.transform.localScale.z);
 			Debug.Log (transform.localScale);
 			totalStep += step;
+		}
+
+		if (hasLanded) {
+			this.transform.position += movementSpeed * transform.up * -1 * Time.deltaTime;
 		}
 	}
 
