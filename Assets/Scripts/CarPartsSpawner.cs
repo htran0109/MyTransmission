@@ -19,16 +19,24 @@ public class CarPartsSpawner: MonoBehaviour {
 	[SerializeField]
 	private float distanceBetweenSparePartsWhenSpawned; 
 
-	void OnCollisionEnter2D(Collision2D collider2D) {
+	public ParticleSystem explosion;
+
+	void OnTriggerEnter2D(Collider2D collider2D) {
 		if (collider2D.gameObject.layer == LAYER_OBJECT_PLAYER) {
-			// flung parts 
-			int numberOfPartsSpawned = Random.Range(0,maximumNumberOfPartsSpawned);
+			// flung parts
+			int numberOfPartsSpawned = Random.Range(1, maximumNumberOfPartsSpawned);
 			Debug.Log ("numbberOfPartsSpaned: " + numberOfPartsSpawned);
 			if (numberOfPartsSpawned == 0) {
 				return; 
 			}
 
 			spawnSpareParts (numberOfPartsSpawned);
+
+			// Play particle effect at the point
+			explosion.transform.position = transform.position;
+			explosion.Play();
+
+			Destroy (this.gameObject);
 		}
 	}
 
