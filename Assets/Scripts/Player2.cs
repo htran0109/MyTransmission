@@ -32,14 +32,11 @@ public class Player2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(followCounter < followDelay) {
+        if(followCounter < followDelay)
+        {
             followCounter += Time.deltaTime;
         }
-
-        oldPosition = new Vector3(Mathf.Lerp(
-			Mathf.Clamp(oldPosition.x, followTarget.transform.position.x-maxXLimit, followTarget.transform.position.x+maxXLimit), 
-			followTarget.transform.position.x, 
-			0.1f), oldPosition.y, oldPosition.z);
+        oldPosition = new Vector3(Mathf.Lerp(oldPosition.x, followTarget.transform.position.x, 0.1f), oldPosition.y, oldPosition.z);
 		translatePlayer (oldPosition - offsetPos);
         attack();
 	}
@@ -80,13 +77,23 @@ public class Player2 : MonoBehaviour {
 
     void attack()
     {
-        if(Input.GetButtonDown("Player2Attack") && attackCounter > attackThreshold)
+        if (Input.GetButtonDown("Player2Attack") && attackCounter > attackThreshold)
         {
+            Debug.Log("Attacked");
             attackCounter = 0;
             weaponBox.enabled = true;
         }
-        attackCounter += Time.deltaTime;
-        weaponBox.enabled = false;
+        else if (attackCounter < .25f)
+        {
+            attackCounter += Time.deltaTime;
+
+        }
+        else
+        {
+            attackCounter += Time.deltaTime;
+            weaponBox.enabled = false;
+
+        }
 
     }
 }
