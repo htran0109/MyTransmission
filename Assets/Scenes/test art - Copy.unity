@@ -525,21 +525,6 @@ Prefab:
       propertyPath: player1Carparts
       value: 
       objectReference: {fileID: 2122113205}
-    - target: {fileID: 114315844828809478, guid: b9bdbde235c5447438182dc45cd11e0d,
-        type: 2}
-      propertyPath: offsetPos.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61269245626213200, guid: b9bdbde235c5447438182dc45cd11e0d,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61949723618407372, guid: b9bdbde235c5447438182dc45cd11e0d,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9bdbde235c5447438182dc45cd11e0d, type: 2}
   m_IsPrefabParent: 0
@@ -778,24 +763,6 @@ Prefab:
     - target: {fileID: 4367917072033384, guid: 8569d9676a448404ea6a8613a1b3819f, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114864857748083822, guid: 8569d9676a448404ea6a8613a1b3819f,
-        type: 2}
-      propertyPath: maxXLimit
-      value: 4.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367917072033384, guid: 8569d9676a448404ea6a8613a1b3819f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367917072033384, guid: 8569d9676a448404ea6a8613a1b3819f, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 61030871898871338, guid: 8569d9676a448404ea6a8613a1b3819f,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8569d9676a448404ea6a8613a1b3819f, type: 2}
