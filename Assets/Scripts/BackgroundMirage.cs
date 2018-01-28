@@ -7,18 +7,26 @@ public class BackgroundMirage : MonoBehaviour {
 	[SerializeField] float scaleSpeed;
 	[SerializeField] float scaleInterval;
 	float timer;
+	Vector3 initialScale;
+	bool isPlaying;
 
 	[SerializeField] Transform[] itemsToScale;
 
 	// Use this for initialization
 	void Start () {
 		timer = scaleInterval;
+		initialScale = transform.localScale;
+
+		isPlaying = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		timer -= Time.deltaTime;
+		if (!isPlaying) {
+			return;
+		}
 
+		timer -= Time.deltaTime;
 		if (timer <= 0) {
 			// Scale the items in the list
 
@@ -28,5 +36,18 @@ public class BackgroundMirage : MonoBehaviour {
 
 			timer = scaleInterval;
 		}
+	}
+
+	public void reset() {
+		timer = scaleInterval;
+		transform.localScale = initialScale;
+	}
+
+	public void startMirage() {
+		isPlaying = true;
+	}
+
+	public void stopMirage() {
+		isPlaying = false;
 	}
 }
