@@ -27,6 +27,7 @@ public class PartsDescriptor : MonoBehaviour {
 		}
 
 		if (coll.tag == "playerCar") {
+            Debug.Log("Recovered something");
 			Player2 possiblePlayer2 = coll.GetComponent<Player2> (); 
 			if (possiblePlayer2 != null) {
 				bool canRestore = possiblePlayer2.restoreCarPartsToPlayer1 (this.partsType);

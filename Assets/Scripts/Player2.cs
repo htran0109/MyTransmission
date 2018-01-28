@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour {
 
-	public GameObject followTarget;
+    public Animator animator;
+    public GameObject followTarget;
     public BoxCollider2D weaponBox;
     public Vector3 oldPosition;
     public float followDelay = 0.2f;
@@ -39,7 +40,7 @@ public class Player2 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         oldPosition = followTarget.transform.position;
-
+        animator = GetComponent<Animator>();
 		this.currentParalyzedDuration = 0.0f;
 	}
 	
@@ -95,10 +96,16 @@ public class Player2 : MonoBehaviour {
 
 		if (!isHit) {
 			if (Input.GetButton ("Player2_Left")) {
+                animator.SetInteger("MoveDir", -1);
 				movementOffset.x = Mathf.Clamp(movementOffset.x-movementSpeed, -maxXLimit, maxXLimit);
 			} else if (Input.GetButton ("Player2_Right")) {
+                animator.SetInteger("MoveDir", 1);
 				movementOffset.x = Mathf.Clamp(movementOffset.x+movementSpeed, -maxXLimit, maxXLimit);
 			}
+            else
+            {
+                animator.SetInteger("MoveDir", 0);
+            }
 		}
 
 		this.transform.position = targetPosition + movementOffset;
@@ -109,6 +116,7 @@ public class Player2 : MonoBehaviour {
         if (Input.GetButtonDown("Player2Attack") && attackCounter > attackThreshold)
         {
             Debug.Log("Attacked");
+            animator.SetTrigger("Hit");
             attackCounter = 0;
             weaponBox.enabled = true;
 			AudioController.Play ("SFX_WooshHit");

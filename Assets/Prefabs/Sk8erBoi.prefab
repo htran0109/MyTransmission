@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50100579327762974}
   - component: {fileID: 61269245626213200}
   - component: {fileID: 212293922547836166}
+  - component: {fileID: 95982301456690960}
   m_Layer: 8
   m_Name: Sk8erBoi
   m_TagString: playerCar
@@ -125,7 +126,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685192166830164}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -144,6 +145,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.199666, y: 8.258963}
   m_EdgeRadius: 0
+--- !u!95 &95982301456690960
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028651903146706}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 932cdc2827918af4ea7ac4eca3b088c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114315844828809478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af16955c40ae84ed2b483333329ee59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   followTarget: {fileID: 0}
   weaponBox: {fileID: 61949723618407372}
   oldPosition: {x: 0, y: 0, z: 0}
@@ -165,7 +184,7 @@ MonoBehaviour:
   movementSpeed: 0.1
   maxXLimit: 1.5
   decay: 0.05
-  offsetPos: {x: 0, y: 1, z: 0}
+  offsetPos: {x: 0, y: 0.5, z: 0}
   paralyzedCooldown: 2
   isHit: 0
   player1Carparts: {fileID: 0}
