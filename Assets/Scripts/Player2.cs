@@ -115,7 +115,6 @@ public class Player2 : MonoBehaviour {
     {
         if (Input.GetButtonDown("Player2Attack") && attackCounter > attackThreshold)
         {
-            Debug.Log("Attacked");
             animator.SetTrigger("Hit");
             attackCounter = 0;
             weaponBox.enabled = true;
