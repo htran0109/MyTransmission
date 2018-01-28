@@ -16,7 +16,7 @@ public class PartsMovingBehavior : MonoBehaviour {
 	private float movementSpeed; 
 
 	private bool isMoving; 
-	private bool hasLanded; 
+	public bool hasLanded; 
 
 	private int rotationDirection;
 	void Awake() {
