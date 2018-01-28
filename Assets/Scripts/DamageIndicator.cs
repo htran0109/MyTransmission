@@ -19,12 +19,10 @@ public class DamageIndicator : MonoBehaviour {
 		
 	}
 
-	void OnEnable(){
-		UpdateIndicator ();
-	}
-
     public void UpdateIndicator()
-    {
+	{	if (car == null) {
+			car = FindObjectOfType<CarParts> ();
+		}
         for (int i = 0; i < partIndicators.Length; i++)
         {
             partIndicators[i].SetActive(!car.partsArray[i]);

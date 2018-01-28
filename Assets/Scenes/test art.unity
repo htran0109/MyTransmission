@@ -818,6 +818,57 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: becae40754dd74f349745a8244ae5dbc,
+        type: 3}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224092429623826830, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -106.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224092429623826830, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_Text
+      value: Press SPACEBAR to start
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422263109959056, guid: 18531cef2b78746318bcb4c208d84251,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18531cef2b78746318bcb4c208d84251, type: 2}
   m_IsPrefabParent: 0
@@ -1556,6 +1607,47 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1571201782952550, guid: d298dac1f17364b9da31d023da999885, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: becae40754dd74f349745a8244ae5dbc,
+        type: 3}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_Text
+      value: "Game over\n SPACEBAR to go back to title screen"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266181931874552, guid: d298dac1f17364b9da31d023da999885,
+        type: 2}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
