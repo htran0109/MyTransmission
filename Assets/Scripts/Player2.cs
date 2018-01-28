@@ -128,7 +128,6 @@ public class Player2 : MonoBehaviour {
 		} 
 		currentParalyzedDuration = 0.0f; 
 		isHit = true; 
-		Debug.Log ("GOT HIT");
 	}
 
 	public bool restoreCarPartsToPlayer1(CarParts.partsList type) {
