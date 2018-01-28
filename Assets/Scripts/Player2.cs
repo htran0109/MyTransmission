@@ -136,7 +136,7 @@ public class Player2 : MonoBehaviour {
     }
 
 	void OnTriggerEnter2D(Collider2D coll){
-		if (coll.gameObject.tag == "playerCar" ) {
+		if (coll.gameObject.tag == "playerCar" || attackCounter < .15f) {
 			return; 
 		} 
 		currentParalyzedDuration = 0.0f; 
