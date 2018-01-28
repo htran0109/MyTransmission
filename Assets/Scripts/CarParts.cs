@@ -28,7 +28,7 @@ public class CarParts : MonoBehaviour {
     public float slowMaxSpeed; //broken stuff
     public float normalMaxSpeed; // for normal parts
     public bool[] partsArray;
-    public enum partsList {LEFT_WHEEL, RIGHT_WHEEL, LIGHTS, STEERING, TRACTION}
+    public enum partsList {LEFT_WHEEL, RIGHT_WHEEL, STEERING, TRACTION}
     int debugPartsIndex = 0;
 
     private CarMovement carMove;
@@ -114,15 +114,7 @@ public class CarParts : MonoBehaviour {
             carMove.rightAccelRate = slowAccelRate;
             carMove.rightMaxSpeed = slowMaxSpeed;
         }
-
-        if(partsArray[(int)partsList.LIGHTS])
-        {
-
-        }
-        else
-        {
-
-        }
+			
 
         if(partsArray[(int)partsList.STEERING])
         {
