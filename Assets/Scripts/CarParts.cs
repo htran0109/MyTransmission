@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CarParts : MonoBehaviour {
 
+	// Game object references
+	public GameObject explosion;
+	public SceneManager manager;
+
+
     public float minBreakTime; //variables to determine when the next random break will happen
     public float maxBreakTime;
     public float nextBreakTime;
@@ -24,8 +29,13 @@ public class CarParts : MonoBehaviour {
     public float slowMaxSpeed; //broken stuff
     public float normalMaxSpeed; // for normal parts
     public bool[] partsArray;
-    public enum partsList {LEFT_WHEEL, RIGHT_WHEEL, LIGHTS, STEERING, TRACTION}
+    public enum partsList {LEFT_WHEEL, RIGHT_WHEEL, STEERING, TRACTION}
     int debugPartsIndex = 0;
+
+    DamageIndicator dmgUI;
+
+    //for breakdown at the end
+    private int breakNumber = 0;
 
     private CarMovement carMove;
 	private PartsFlungOutOfCar partsFlinger; 
@@ -40,6 +50,8 @@ public class CarParts : MonoBehaviour {
         nextBreakTime = Random.Range(minBreakTime, maxBreakTime);
 
 		shellHealth = maxShellHealth;
+        dmgUI = FindObjectOfType<DamageIndicator>();
+        dmgUI.UpdateIndicator();
 	}
 	
 	// Update is called once per frame
@@ -61,6 +73,21 @@ public class CarParts : MonoBehaviour {
         }
         invincibilityCounter += Time.deltaTime;
         healthInvincCounter += Time.deltaTime;
+
+
+        //if the car is done for, break a bunch
+        if (breakNumber > 0 && invincibilityCounter > 0.2)
+        {
+            invincibilityCounter = 0;
+            float brokenPart = (int)Random.Range(0, partsArray.Length);
+            partsFlinger.throwParts((partsList)brokenPart);
+            breakNumber--;
+            if(breakNumber == 0)
+            {
+                this.gameObject.SetActive(false);
+
+            }
+        }
 	}
 
    public void damageCar()
@@ -85,6 +112,7 @@ public class CarParts : MonoBehaviour {
                 Debug.Log("Broke:" + (int)workingParts[(int)brokenPart]);
             }
         }
+        dmgUI.UpdateIndicator();
     }
 
     void updateCarFunctions()
@@ -110,15 +138,7 @@ public class CarParts : MonoBehaviour {
             carMove.rightAccelRate = slowAccelRate;
             carMove.rightMaxSpeed = slowMaxSpeed;
         }
-
-        if(partsArray[(int)partsList.LIGHTS])
-        {
-
-        }
-        else
-        {
-
-        }
+			
 
         if(partsArray[(int)partsList.STEERING])
         {
@@ -148,6 +168,7 @@ public class CarParts : MonoBehaviour {
         if (coll.gameObject.tag == "obstacle")//rock hit car
         {
             //do some damage step
+			AudioController.Play("SFX_MetalSmash");
             if (healthInvincCounter > 0.5)
             {
                 healthInvincCounter = 0;
@@ -157,8 +178,11 @@ public class CarParts : MonoBehaviour {
 
 
             if (shellHealth <= 0) {
-				this.gameObject.SetActive (false);
-				Debug.Log ("GAME OVER");
+				// Play car explosion
+				explosion.SetActive(true);
+                breakNumber = 5;
+                Debug.Log ("GAME OVER");
+				manager.endGame ();
 			}
             
             damageCar();
@@ -182,6 +206,7 @@ public class CarParts : MonoBehaviour {
 			break; 
 		}
 
-		return true;
+        dmgUI.UpdateIndicator();
+        return true;
 	}
 }

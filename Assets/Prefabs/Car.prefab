@@ -245,7 +245,6 @@ MonoBehaviour:
   CarPartsSpriteArray:
   - {fileID: 21300000, guid: 1fa2d7e0c02a1a54b8cc2b833c38b39a, type: 3}
   - {fileID: 21300000, guid: 1fa2d7e0c02a1a54b8cc2b833c38b39a, type: 3}
-  - {fileID: 21300000, guid: e99af647301fcb04fb5843a538640b8d, type: 3}
   - {fileID: 21300000, guid: 8fec67b31f395ab44800a1163d099563, type: 3}
   - {fileID: 21300000, guid: e99af647301fcb04fb5843a538640b8d, type: 3}
   junkPartsPool: {fileID: 114818484717348382}

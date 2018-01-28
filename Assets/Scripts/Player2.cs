@@ -161,6 +161,7 @@ public class Player2 : MonoBehaviour {
 		} 
 		currentParalyzedDuration = 0.0f; 
 		isHit = true;
+		AudioController.Play ("SFX_MetalSmash");
         animator.SetBool("Damaged", isHit);
 
     }

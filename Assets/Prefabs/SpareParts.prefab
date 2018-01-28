@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383590193469742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21173942, y: 3.7266161, z: -4.86}
+  m_LocalPosition: {x: -2.0737803, y: -1.779565, z: -4.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +82,7 @@ MonoBehaviour:
   flungSpeed_UnityUnitPerSecond: 5
   rotation_DegreePerSecond: 720
   movementSpeed: 2
+  hasLanded: 0
 --- !u!114 &114756287030358402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,7 +98,6 @@ MonoBehaviour:
   listOfPartsSpriteInOrderOfEnum:
   - {fileID: 21300000, guid: ff968866f3c908248a6e43dfea860e48, type: 3}
   - {fileID: 21300000, guid: ff968866f3c908248a6e43dfea860e48, type: 3}
-  - {fileID: 21300000, guid: e99af647301fcb04fb5843a538640b8d, type: 3}
   - {fileID: 21300000, guid: 8fec67b31f395ab44800a1163d099563, type: 3}
   - {fileID: 21300000, guid: e99af647301fcb04fb5843a538640b8d, type: 3}
 --- !u!212 &212364668541110258
