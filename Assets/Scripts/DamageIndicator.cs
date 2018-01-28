@@ -19,6 +19,10 @@ public class DamageIndicator : MonoBehaviour {
 		
 	}
 
+	void OnEnable(){
+		UpdateIndicator ();
+	}
+
     public void UpdateIndicator()
     {
         for (int i = 0; i < partIndicators.Length; i++)

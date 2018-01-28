@@ -209,4 +209,11 @@ public class CarParts : MonoBehaviour {
         dmgUI.UpdateIndicator();
         return true;
 	}
+
+	void OnEnable() {
+		shellHealth = maxShellHealth;
+		for(int i = 0; i < partsArray.Length; i++) {
+			partsArray[i] = true;
+		}
+	}
 }
