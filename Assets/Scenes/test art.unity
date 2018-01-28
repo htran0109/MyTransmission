@@ -675,14 +675,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114315844828809478, guid: b9bdbde235c5447438182dc45cd11e0d,
+        type: 2}
+      propertyPath: player1Carparts
+      value: 
+      objectReference: {fileID: 2122113205}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9bdbde235c5447438182dc45cd11e0d, type: 2}
   m_IsPrefabParent: 0
---- !u!198 &1363717281 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 198749163075311164, guid: 679a461f3b7ab4ee482e3e75bde89c50,
-    type: 2}
-  m_PrefabInternal: {fileID: 499274279}
 --- !u!1001 &1397208073
 Prefab:
   m_ObjectHideFlags: 0
@@ -1006,3 +1006,9 @@ GameObject:
   m_PrefabParentObject: {fileID: 1114804083011638, guid: 8569d9676a448404ea6a8613a1b3819f,
     type: 2}
   m_PrefabInternal: {fileID: 2122113202}
+--- !u!114 &2122113205 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114411972733995312, guid: 8569d9676a448404ea6a8613a1b3819f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2122113202}
+  m_Script: {fileID: 11500000, guid: cebd1ef0fb4a0394ba7bf634fd364923, type: 3}
