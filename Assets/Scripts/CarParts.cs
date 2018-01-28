@@ -155,6 +155,7 @@ public class CarParts : MonoBehaviour {
         if (coll.gameObject.tag == "obstacle")//rock hit car
         {
             //do some damage step
+			AudioController.Play("SFX_MetalSmash");
             if (healthInvincCounter > 0.5)
             {
                 healthInvincCounter = 0;
