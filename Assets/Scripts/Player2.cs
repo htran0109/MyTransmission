@@ -46,7 +46,7 @@ public class Player2 : MonoBehaviour {
 
         //put in the 'rope' between the car and this player
 		this.currentParalyzedDuration = 0.0f;
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
         lineRenderer.widthMultiplier = 0.04f;
         float alpha = 1.0f;
         Color c1 = Color.yellow;
@@ -161,6 +161,7 @@ public class Player2 : MonoBehaviour {
 		} 
 		currentParalyzedDuration = 0.0f; 
 		isHit = true;
+		AudioController.Play ("SFX_MetalSmash");
         animator.SetBool("Damaged", isHit);
 
     }
