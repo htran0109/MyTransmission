@@ -51,14 +51,7 @@ public class CarParts : MonoBehaviour {
         animator.SetBool("left_wheel", partsArray[(int)partsList.LEFT_WHEEL]);
         animator.SetBool("right_wheel", partsArray[(int)partsList.RIGHT_WHEEL]);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //debugPartsIndex = (int)(Random.Range(0, 4));
 
-            partsArray[debugPartsIndex] = false;
-            Debug.Log("Broke Part" + debugPartsIndex);
-            debugPartsIndex++;
-        }
         updateCarFunctions();
         if (breakCounter > nextBreakTime)
         {

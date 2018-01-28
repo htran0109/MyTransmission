@@ -43,6 +43,8 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	void startGame() {
+		mirageScript.startMirage();
+
 		// Disable all title game object
 		titleContainer.SetActive(false);
 

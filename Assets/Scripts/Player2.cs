@@ -75,7 +75,8 @@ public class Player2 : MonoBehaviour {
 			this.currentParalyzedDuration += Time.deltaTime;
 
 			if (this.currentParalyzedDuration >= paralyzedCooldown) {
-				isHit = false; 
+				isHit = false;
+                animator.SetBool("Damaged", isHit);
 				currentParalyzedDuration = 0.0f;
 			}
 		}
@@ -159,10 +160,12 @@ public class Player2 : MonoBehaviour {
 			return; 
 		} 
 		currentParalyzedDuration = 0.0f; 
-		isHit = true; 
-	}
+		isHit = true;
+        animator.SetBool("Damaged", isHit);
 
-	public bool restoreCarPartsToPlayer1(CarParts.partsList type) {
+    }
+
+    public bool restoreCarPartsToPlayer1(CarParts.partsList type) {
 		return player1Carparts.restoreParts (type);
 	}
 }
