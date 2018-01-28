@@ -106,7 +106,7 @@ public class Player2 : MonoBehaviour {
             Debug.Log("Attacked");
             attackCounter = 0;
             weaponBox.enabled = true;
-			AudioController.Play ("SFX_MetalSmash");
+			AudioController.Play ("SFX_WooshHit");
         }
         else if (attackCounter < .25f)
         {

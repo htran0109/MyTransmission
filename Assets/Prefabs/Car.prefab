@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4292472320515954}
   - component: {fileID: 114874531320009408}
+  - component: {fileID: 114818484717348382}
   m_Layer: 8
   m_Name: PartsFlinger
   m_TagString: Untagged
@@ -194,6 +195,20 @@ MonoBehaviour:
   slowMaxSpeed: 0.04
   normalMaxSpeed: 0.15
   partsArray: 0000000000
+--- !u!114 &114818484717348382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289826094305544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d2b41f035cc747a7e912b23e8f371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 1489244246784632, guid: cc29426ee6a035d45ac6a0629d40bc5f,
+    type: 2}
+  objectNumber: 10
 --- !u!114 &114864857748083822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,14 +241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30c1d3e92da0714fb9826b0d9980442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkPartsPrefab: {fileID: 1489244246784632, guid: cc29426ee6a035d45ac6a0629d40bc5f,
-    type: 2}
   CarPartsSpriteArray:
   - {fileID: 21300000, guid: 1fa2d7e0c02a1a54b8cc2b833c38b39a, type: 3}
   - {fileID: 21300000, guid: 1fa2d7e0c02a1a54b8cc2b833c38b39a, type: 3}
   - {fileID: 21300000, guid: e99af647301fcb04fb5843a538640b8d, type: 3}
   - {fileID: 21300000, guid: 8fec67b31f395ab44800a1163d099563, type: 3}
   - {fileID: 21300000, guid: e99af647301fcb04fb5843a538640b8d, type: 3}
+  junkPartsPool: {fileID: 114818484717348382}
 --- !u!198 &198594012466400722
 ParticleSystem:
   m_ObjectHideFlags: 1

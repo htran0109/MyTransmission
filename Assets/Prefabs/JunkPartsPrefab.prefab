@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425139f6210fe0d41addd5e5f6276e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalingPerSecond: 25
+  scalingPerSecond: 6
   upSpeed: 5
   flingModifier: 10
   downwardsPull: 50

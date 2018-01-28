@@ -36,6 +36,7 @@ public class CarPartsSpawner: MonoBehaviour {
             if (collider2D.gameObject.layer == LAYER_OBJECT_WEAPON)
             {
                 spawnSpareParts(numberOfPartsSpawned);
+				AudioController.Play ("SFX_MetalSmash");
             }
 
 

@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PartsFlungOutOfCar : MonoBehaviour {
-	[SerializeField]
-	private GameObject junkPartsPrefab;  
+
 	[SerializeField]
 	private Sprite[] CarPartsSpriteArray;
-
+	[SerializeField]
+	private GenericObjectPool junkPartsPool;
 	// Use this for initialization
 	void Start () {
 	}
@@ -23,7 +23,8 @@ public class PartsFlungOutOfCar : MonoBehaviour {
 
 	// Update is called once per frame
 	public void throwParts(CarParts.partsList partsType){
-		GameObject partsThrown = GameObject.Instantiate (junkPartsPrefab, this.transform.position, Quaternion.identity);
+		
+		GameObject partsThrown = junkPartsPool.pullObject(); 
 		SpriteRenderer sp = partsThrown.GetComponent<SpriteRenderer> ();
 		sp.sprite = CarPartsSpriteArray [(int)partsType];
 		partsThrown.GetComponent<FlungPartsMovement>().throws ();

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GenericObjectPool : MonoBehaviour {
+	[SerializeField]	
 	GameObject objectPrefab; 
+	[SerializeField]
 	int objectNumber; 
 	List<GameObject> objectPool;
 	// Use this for initialization
@@ -12,6 +14,7 @@ public class GenericObjectPool : MonoBehaviour {
 
 		for (int i = 0; i < objectNumber; i++) {
 			GameObject newObject = Instantiate (objectPrefab, this.transform.position, Quaternion.identity);
+			newObject.SetActive (false);
 			objectPool.Add (newObject);
 		}
 	}
