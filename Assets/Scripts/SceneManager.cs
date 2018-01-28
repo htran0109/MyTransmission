@@ -38,6 +38,7 @@ public class SceneManager : MonoBehaviour {
 		} else if (currentState == gameState.END) {
 			if (Input.GetKey (KeyCode.Space)) {
 				currentState = gameState.TITLE;
+                Debug.Log("Restarting");
 			}
 		}
 	}
