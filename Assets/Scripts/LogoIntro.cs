@@ -18,7 +18,6 @@ public class LogoIntro : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		Debug.Log (timer / duration);
 		transform.position = Vector3.Lerp (transform.position, endPosition, timer/duration);
 	}
 }
