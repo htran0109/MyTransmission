@@ -57,15 +57,14 @@ MonoBehaviour:
   minSpawnTime: 3
   maxSpawnTime: 5
   topScreenY: 0.89
-  leftBoundaryX: -3
-  rightBoundaryX: 3
+  leftBoundaryX: -2.5
+  rightBoundaryX: 2.5
   maxRocksRow: 4
   rock: {fileID: 1735028178722248, guid: ef74f711a18b7854dac2dbf13a6447b4, type: 2}
   car: {fileID: 1701816179862304, guid: 0bfe83ca289ed2c4595065d99663aad0, type: 2}
   rockPool: {fileID: 114420064547599226}
   carPool: {fileID: 114726963503644264}
-  explosion: {fileID: 198749163075311164, guid: 679a461f3b7ab4ee482e3e75bde89c50,
-    type: 2}
+  explosion: {fileID: 0}
 --- !u!114 &114420064547599226
 MonoBehaviour:
   m_ObjectHideFlags: 1
