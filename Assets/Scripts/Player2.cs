@@ -59,6 +59,11 @@ public class Player2 : MonoBehaviour {
 				currentParalyzedDuration = 0.0f;
 			}
 		}
+
+		if (followTarget == null) {
+			return;
+		}
+
         oldPosition = new Vector3(Mathf.Lerp(oldPosition.x, followTarget.transform.position.x, 0.1f), oldPosition.y, oldPosition.z);
 		translatePlayer (oldPosition - offsetPos);
         attack();
@@ -114,6 +119,7 @@ public class Player2 : MonoBehaviour {
             animator.SetTrigger("Hit");
             attackCounter = 0;
             weaponBox.enabled = true;
+			AudioController.Play ("SFX_WooshHit");
         }
         else if (attackCounter < .25f)
         {
@@ -135,7 +141,6 @@ public class Player2 : MonoBehaviour {
 		} 
 		currentParalyzedDuration = 0.0f; 
 		isHit = true; 
-		Debug.Log ("GOT HIT");
 	}
 
 	public bool restoreCarPartsToPlayer1(CarParts.partsList type) {

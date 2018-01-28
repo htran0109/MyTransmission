@@ -46,7 +46,7 @@ public class PartsMovingBehavior : MonoBehaviour {
 			Debug.Log (transform.localScale);
 			totalStep += step;
 			if (transform.position.z >= 0.0f || totalStep >= totalDistance) {
-				Debug.Log ("target has been reacehed");
+				//Debug.Log ("target has been reacehed");
 				isMoving = false;
 				hasLanded = true;
 				return;
@@ -60,8 +60,8 @@ public class PartsMovingBehavior : MonoBehaviour {
 
 
 	public void flungTo(Vector3 targetPosition){
-		Debug.Log ("current position: " + this.transform.position);
-		Debug.Log ("its target position: " + targetPosition);
+		//Debug.Log ("current position: " + this.transform.position);
+		//Debug.Log ("its target position: " + targetPosition);
 		this.targetPosition = targetPosition;
 		rotationDirection =(int) Mathf.Pow (-1.0F, Random.Range (1, 5));
 		isMoving = true; 
@@ -69,7 +69,6 @@ public class PartsMovingBehavior : MonoBehaviour {
 	}
 
 	float calculateAdditionalHeight(float currentTotalStep){
-		Debug.Log ("current Step: " + currentTotalStep);
 		return Mathf.Pow ( (totalStep / totalDistance * 2) - 1, 2) * -1 +  1;
 	}
 }

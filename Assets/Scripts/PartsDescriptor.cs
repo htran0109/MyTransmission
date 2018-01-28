@@ -26,6 +26,8 @@ public class PartsDescriptor : MonoBehaviour {
 			if (possiblePlayer2 != null) {
 				bool canRestore = possiblePlayer2.restoreCarPartsToPlayer1 (this.partsType);
 				if(canRestore){
+					Debug.Log ("COLLECTION???");
+					AudioController.Play ("SFX_Pickup");
 					Destroy (this.gameObject);	
 				}
 			}

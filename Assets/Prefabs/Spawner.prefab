@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4414066352861388}
   - component: {fileID: 212067912607072224}
   - component: {fileID: 114326621996808652}
+  - component: {fileID: 114420064547599226}
+  - component: {fileID: 114726963503644264}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -60,7 +62,38 @@ MonoBehaviour:
   maxRocksRow: 4
   rock: {fileID: 1735028178722248, guid: ef74f711a18b7854dac2dbf13a6447b4, type: 2}
   car: {fileID: 1701816179862304, guid: 0bfe83ca289ed2c4595065d99663aad0, type: 2}
-  explosion: {fileID: 0}
+  rockPool: {fileID: 114420064547599226}
+  carPool: {fileID: 114726963503644264}
+  explosion: {fileID: 198749163075311164, guid: 679a461f3b7ab4ee482e3e75bde89c50,
+    type: 2}
+--- !u!114 &114420064547599226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438318768440936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d2b41f035cc747a7e912b23e8f371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 1735028178722248, guid: ef74f711a18b7854dac2dbf13a6447b4,
+    type: 2}
+  objectNumber: 10
+--- !u!114 &114726963503644264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438318768440936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d2b41f035cc747a7e912b23e8f371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 1701816179862304, guid: 0bfe83ca289ed2c4595065d99663aad0,
+    type: 2}
+  objectNumber: 10
 --- !u!212 &212067912607072224
 SpriteRenderer:
   m_ObjectHideFlags: 1

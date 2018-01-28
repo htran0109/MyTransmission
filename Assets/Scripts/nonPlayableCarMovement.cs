@@ -20,6 +20,6 @@ public class nonPlayableCarMovement : MonoBehaviour {
 
     void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+		this.gameObject.SetActive (false);
     }
 }

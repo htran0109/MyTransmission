@@ -27,19 +27,17 @@ public class Rock : MonoBehaviour {
         if(coll.gameObject.tag == "playerCar")//rock hit car
         {
             //do some damage step
-
-            Destroy(this.gameObject);
+			this.gameObject.SetActive (false);
             //playerCar.damageCar();
         }
         if(coll.gameObject.tag == "skater") //rock hit skater
         {
-            //do some stun step
-            Destroy(this.gameObject);
+			this.gameObject.SetActive (false);
         } 
     }
     
     void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+		this.gameObject.SetActive (false);
     }
 }
