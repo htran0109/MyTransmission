@@ -425,6 +425,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed37bb48a865498d86f1e19d298b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &416352150 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1028651903146706, guid: b9bdbde235c5447438182dc45cd11e0d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1148989845}
+--- !u!95 &416352151
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416352150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 932cdc2827918af4ea7ac4eca3b088c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &499274279
 Prefab:
   m_ObjectHideFlags: 0
@@ -674,6 +696,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315844828809478, guid: b9bdbde235c5447438182dc45cd11e0d,
+        type: 2}
+      propertyPath: offsetPos.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9bdbde235c5447438182dc45cd11e0d, type: 2}
