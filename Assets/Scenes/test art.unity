@@ -160,19 +160,19 @@ Prefab:
     - target: {fileID: 114690888701347660, guid: cec5fdf9c3b6d451da9dffc1a35de2cf,
         type: 2}
       propertyPath: treePrefabs.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 1266487068632902, guid: 7259712259a7e4f5184f2381ef5b869a,
         type: 2}
     - target: {fileID: 114690888701347660, guid: cec5fdf9c3b6d451da9dffc1a35de2cf,
         type: 2}
       propertyPath: treePrefabs.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 1730533719990626, guid: a9193d6b6076743299478f6ad240acf0,
         type: 2}
     - target: {fileID: 114690888701347660, guid: cec5fdf9c3b6d451da9dffc1a35de2cf,
         type: 2}
       propertyPath: treePrefabs.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 1307887810387408, guid: f1597df2d25db46a4b3b4446c1e715b4,
         type: 2}
     m_RemovedComponents: []
@@ -274,8 +274,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 221a120093fe440b7a2fcf708be9c012, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 0.01
   roadTex: {fileID: 122908974}
 --- !u!1 &161064178
@@ -379,8 +379,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
@@ -424,8 +424,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ed37bb48a865498d86f1e19d298b4a2, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &176600531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,8 +435,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6a754cc8f54546e0b4481eac25340ca, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   scaleSpeed: 0.05
   scaleInterval: 10
   itemsToScale:
@@ -699,8 +699,13 @@ Prefab:
     - target: {fileID: 114315844828809478, guid: b9bdbde235c5447438182dc45cd11e0d,
         type: 2}
       propertyPath: followTarget
-      value:
+      value: 
       objectReference: {fileID: 2122113203}
+    - target: {fileID: 114315844828809478, guid: b9bdbde235c5447438182dc45cd11e0d,
+        type: 2}
+      propertyPath: player1Carparts
+      value: 
+      objectReference: {fileID: 2122113205}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9bdbde235c5447438182dc45cd11e0d, type: 2}
   m_IsPrefabParent: 0
@@ -736,7 +741,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1316123146
@@ -748,8 +753,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba25da7a5a23b4e0895927ceb44c42d3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   startPosition: {x: 20, y: 1, z: 0}
   endPosition: {x: 0, y: 1, z: 0}
   duration: 5
@@ -842,7 +847,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &1363011267
@@ -911,8 +916,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db617832e6634193aec00a0d8b8eb4c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1397208073
 Prefab:
   m_ObjectHideFlags: 0
@@ -960,17 +965,17 @@ Prefab:
     - target: {fileID: 114326621996808652, guid: 22140943de93c104e9e68ac576a3c3ad,
         type: 2}
       propertyPath: explosion
-      value:
+      value: 
       objectReference: {fileID: 475350236}
     - target: {fileID: 114326621996808652, guid: 22140943de93c104e9e68ac576a3c3ad,
         type: 2}
       propertyPath: rockPool
-      value:
+      value: 
       objectReference: {fileID: 1457227441}
     - target: {fileID: 114326621996808652, guid: 22140943de93c104e9e68ac576a3c3ad,
         type: 2}
       propertyPath: carPool
-      value:
+      value: 
       objectReference: {fileID: 1457227440}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22140943de93c104e9e68ac576a3c3ad, type: 2}
@@ -1413,7 +1418,7 @@ Prefab:
     - target: {fileID: 199112708654763036, guid: 8569d9676a448404ea6a8613a1b3819f,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: b8e36f26afb8841358f278f60ec4c2d3, type: 2}
     - target: {fileID: 199112708654763036, guid: 8569d9676a448404ea6a8613a1b3819f,
         type: 2}
@@ -1511,7 +1516,7 @@ Prefab:
     - target: {fileID: 114411972733995312, guid: 8569d9676a448404ea6a8613a1b3819f,
         type: 2}
       propertyPath: explosion
-      value:
+      value: 
       objectReference: {fileID: 1363011265}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8569d9676a448404ea6a8613a1b3819f, type: 2}
@@ -1521,3 +1526,9 @@ GameObject:
   m_PrefabParentObject: {fileID: 1114804083011638, guid: 8569d9676a448404ea6a8613a1b3819f,
     type: 2}
   m_PrefabInternal: {fileID: 2122113202}
+--- !u!114 &2122113205 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114411972733995312, guid: 8569d9676a448404ea6a8613a1b3819f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2122113202}
+  m_Script: {fileID: 11500000, guid: cebd1ef0fb4a0394ba7bf634fd364923, type: 3}
