@@ -8,11 +8,11 @@ public class Rock : MonoBehaviour {
     // Use this for initialization
     [SerializeField]
     float movementSpeed_UnityUnitPerSecond;
+	SpriteRandomizer sr; 
 
     void Start () {
         movementDirection = new Vector3(0, (.52f-.89f), -1.17f);
         playerCar = GameObject.FindGameObjectWithTag("playerCar").GetComponent<CarParts>();
-
     }
 
     // Update is called once per frame
