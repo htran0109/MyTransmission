@@ -34,9 +34,6 @@ public class CarParts : MonoBehaviour {
 
     DamageIndicator dmgUI;
 
-    //for breakdown at the end
-    private int breakNumber = 0;
-
     private CarMovement carMove;
 	private PartsFlungOutOfCar partsFlinger; 
 	// Use this for initialization
@@ -75,19 +72,7 @@ public class CarParts : MonoBehaviour {
         healthInvincCounter += Time.deltaTime;
 
 
-        //if the car is done for, break a bunch
-        if (breakNumber > 0 && invincibilityCounter > 0.2)
-        {
-            invincibilityCounter = 0;
-            float brokenPart = (int)Random.Range(0, partsArray.Length);
-            partsFlinger.throwParts((partsList)brokenPart);
-            breakNumber--;
-            if(breakNumber == 0)
-            {
-                this.gameObject.SetActive(false);
 
-            }
-        }
 	}
 
    public void damageCar()
@@ -180,7 +165,6 @@ public class CarParts : MonoBehaviour {
             if (shellHealth <= 0) {
 				// Play car explosion
 				explosion.SetActive(true);
-                breakNumber = 5;
                 Debug.Log ("GAME OVER");
 				manager.endGame ();
 			}
