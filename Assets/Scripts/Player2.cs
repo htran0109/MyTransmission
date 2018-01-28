@@ -37,16 +37,36 @@ public class Player2 : MonoBehaviour {
 	float rotationSpeed = 1f;
 	float rotationLimit = 30f;
 
-	// Use this for initialization
-	void Start () {
+
+    LineRenderer lineRenderer;
+    // Use this for initialization
+    void Start () {
         oldPosition = followTarget.transform.position;
         animator = GetComponent<Animator>();
+
+        //put in the 'rope' between the car and this player
 		this.currentParalyzedDuration = 0.0f;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(followCounter < followDelay)
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.widthMultiplier = 0.04f;
+        float alpha = 1.0f;
+        Color c1 = Color.yellow;
+        Color c2 = Color.grey;
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c2, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
+            );
+        lineRenderer.colorGradient = gradient;
+    }
+
+    // Update is called once per frame
+    void Update () {
+        lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y + .03f, transform.position.z));
+        Vector3 secondPos = followTarget.transform.position;
+        lineRenderer.SetPosition(1, new Vector3(secondPos.x, secondPos.y - .1f, secondPos.z));
+
+        if (followCounter < followDelay)
         {
             followCounter += Time.deltaTime;
         }
