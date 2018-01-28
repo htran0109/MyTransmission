@@ -32,6 +32,8 @@ public class CarParts : MonoBehaviour {
     public enum partsList {LEFT_WHEEL, RIGHT_WHEEL, STEERING, TRACTION}
     int debugPartsIndex = 0;
 
+    DamageIndicator dmgUI;
+
     //for breakdown at the end
     private int breakNumber = 0;
 
@@ -48,6 +50,8 @@ public class CarParts : MonoBehaviour {
         nextBreakTime = Random.Range(minBreakTime, maxBreakTime);
 
 		shellHealth = maxShellHealth;
+        dmgUI = FindObjectOfType<DamageIndicator>();
+        dmgUI.UpdateIndicator();
 	}
 	
 	// Update is called once per frame
@@ -108,6 +112,7 @@ public class CarParts : MonoBehaviour {
                 Debug.Log("Broke:" + (int)workingParts[(int)brokenPart]);
             }
         }
+        dmgUI.UpdateIndicator();
     }
 
     void updateCarFunctions()
@@ -201,6 +206,7 @@ public class CarParts : MonoBehaviour {
 			break; 
 		}
 
-		return true;
+        dmgUI.UpdateIndicator();
+        return true;
 	}
 }
