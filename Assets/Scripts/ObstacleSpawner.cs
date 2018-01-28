@@ -19,6 +19,11 @@ public class ObstacleSpawner : MonoBehaviour {
     public GameObject rock; //prefab of a rock to spawn at the top of the screen
     public GameObject car; //prefab of a car
 
+	[SerializeField]
+	private GenericObjectPool rockPool; 
+	[SerializeField]
+	private GenericObjectPool carPool;
+
     public ParticleSystem explosion;
 
     // Use this for initialization
@@ -46,12 +51,19 @@ public class ObstacleSpawner : MonoBehaviour {
         float randChoice = Random.Range(0, 4);
         if(randChoice < 3 && rocksRow < maxRocksRow)
         {
-            Instantiate(rock, new Vector3(Random.Range(leftBoundaryX, rightBoundaryX), topScreenY, 0), Quaternion.identity);
+            //Instantiate(rock, new Vector3(Random.Range(leftBoundaryX, rightBoundaryX), topScreenY, 0), Quaternion.identity);
+			GameObject rock = rockPool.pullObject (); 
+			rock.transform.position = new Vector3 (Random.Range (leftBoundaryX, rightBoundaryX), topScreenY, 0);
+			rock.transform.rotation = Quaternion.identity;
+
             rocksRow++;
         }
         else
         {
-            GameObject npcCar = Instantiate(car, new Vector3(Random.Range(leftBoundaryX, rightBoundaryX), topScreenY, 0), Quaternion.identity);
+          // GameObject npcCar = Instantiate(car, new Vector3(Random.Range(leftBoundaryX, rightBoundaryX), topScreenY, 0), Quaternion.identity);
+			GameObject npcCar = carPool.pullObject();
+			npcCar.transform.position = new Vector3 (Random.Range (leftBoundaryX, rightBoundaryX), topScreenY, 0);
+			npcCar.transform.rotation = Quaternion.identity;
             npcCar.GetComponent<CarPartsSpawner>().explosion = explosion;
             rocksRow = 0;
         }

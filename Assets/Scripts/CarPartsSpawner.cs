@@ -41,8 +41,8 @@ public class CarPartsSpawner: MonoBehaviour {
 
 
 
-			Destroy (this.gameObject);
-            Debug.Log("not supposed yo be here");
+			this.gameObject.SetActive (false);
+           // Debug.Log("not supposed yo be here");
 		}
 	}
 

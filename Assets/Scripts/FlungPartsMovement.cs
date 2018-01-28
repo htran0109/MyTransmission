@@ -35,7 +35,7 @@ public class FlungPartsMovement : MonoBehaviour {
 
 		currentLifeTime += Time.deltaTime; 
 		if (currentLifeTime >= objectLifeTime) {
-			Destroy (this.gameObject);
+			this.gameObject.SetActive(false);
 		}
 	}
 
