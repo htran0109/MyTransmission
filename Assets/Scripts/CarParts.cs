@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CarParts : MonoBehaviour {
 
+	// Game object references
+	public GameObject explosion;
+
+
     public float minBreakTime; //variables to determine when the next random break will happen
     public float maxBreakTime;
     public float nextBreakTime;
@@ -158,6 +162,9 @@ public class CarParts : MonoBehaviour {
 
             if (shellHealth <= 0) {
 				this.gameObject.SetActive (false);
+				// Play car explosion
+				explosion.SetActive(true);
+
 				Debug.Log ("GAME OVER");
 			}
             
