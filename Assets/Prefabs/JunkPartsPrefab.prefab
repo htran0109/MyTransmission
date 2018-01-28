@@ -9,94 +9,60 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1438318768440936}
+  m_RootGameObject: {fileID: 1489244246784632}
   m_IsPrefabParent: 1
---- !u!1 &1438318768440936
+--- !u!1 &1489244246784632
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4414066352861388}
-  - component: {fileID: 212067912607072224}
-  - component: {fileID: 114326621996808652}
-  - component: {fileID: 114420064547599226}
-  - component: {fileID: 114726963503644264}
+  - component: {fileID: 4875795807679484}
+  - component: {fileID: 212057903918865194}
+  - component: {fileID: 114920086643135440}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: JunkPartsPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4414066352861388
+--- !u!4 &4875795807679484
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438318768440936}
+  m_GameObject: {fileID: 1489244246784632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.4806375, y: -3.564341, z: -4.353399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114326621996808652
+--- !u!114 &114920086643135440
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438318768440936}
+  m_GameObject: {fileID: 1489244246784632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a8fb0c1b286154da13618896dff175, type: 3}
+  m_Script: {fileID: 11500000, guid: 425139f6210fe0d41addd5e5f6276e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 3
-  maxSpawnTime: 5
-  topScreenY: 0.89
-  leftBoundaryX: -3
-  rightBoundaryX: 3
-  maxRocksRow: 4
-  rock: {fileID: 1735028178722248, guid: ef74f711a18b7854dac2dbf13a6447b4, type: 2}
-  car: {fileID: 1701816179862304, guid: 0bfe83ca289ed2c4595065d99663aad0, type: 2}
-  explosion: {fileID: 0}
---- !u!114 &114420064547599226
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438318768440936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d2b41f035cc747a7e912b23e8f371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 1735028178722248, guid: ef74f711a18b7854dac2dbf13a6447b4,
-    type: 2}
-  objectNumber: 10
---- !u!114 &114726963503644264
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438318768440936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d2b41f035cc747a7e912b23e8f371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 1701816179862304, guid: 0bfe83ca289ed2c4595065d99663aad0,
-    type: 2}
-  objectNumber: 10
---- !u!212 &212067912607072224
+  scalingPerSecond: 6
+  upSpeed: 5
+  flingModifier: 10
+  downwardsPull: 50
+  objectLifeTime: 2
+--- !u!212 &212057903918865194
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438318768440936}
+  m_GameObject: {fileID: 1489244246784632}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

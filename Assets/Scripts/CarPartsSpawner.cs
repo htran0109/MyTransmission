@@ -10,7 +10,10 @@ public class CarPartsSpawner: MonoBehaviour {
     const int LAYER_OBJECT_WEAPON = 9;
 
 	[SerializeField]
-	private float sparePartsSpawnDistance; 
+	private float xTargetPosition = 0.0f;
+	[SerializeField]
+	private float yTargetPosition = 0.0f; 
+
 	private Collider2D objectCollider; 
 
 	[SerializeField]
@@ -33,21 +36,22 @@ public class CarPartsSpawner: MonoBehaviour {
             if (collider2D.gameObject.layer == LAYER_OBJECT_WEAPON)
             {
                 spawnSpareParts(numberOfPartsSpawned);
+				AudioController.Play ("SFX_MetalSmash");
             }
 
 
 
-			Destroy (this.gameObject);
-            Debug.Log("not supposed yo be here");
+			this.gameObject.SetActive (false);
+           // Debug.Log("not supposed yo be here");
 		}
 	}
 
 	// taking the center of the car as referencePoint,  
 	void spawnSpareParts(int numberOfPartsSpawned) {
-		Vector3 startingPosition = this.transform.position; 
+		
 		Vector3 movingDirection = this.transform.up; 
 
-		startingPosition += movingDirection * sparePartsSpawnDistance;
+		Vector3 startingPosition = new Vector3(xTargetPosition,yTargetPosition,0.0f);
 
 		Vector3 farthestPartsFromLeft = startingPosition; 
 		if ((numberOfPartsSpawned % 2) == 0) { //is even
