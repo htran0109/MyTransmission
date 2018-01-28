@@ -58,6 +58,11 @@ public class Player2 : MonoBehaviour {
 				currentParalyzedDuration = 0.0f;
 			}
 		}
+
+		if (followTarget == null) {
+			return;
+		}
+
         oldPosition = new Vector3(Mathf.Lerp(oldPosition.x, followTarget.transform.position.x, 0.1f), oldPosition.y, oldPosition.z);
 		translatePlayer (oldPosition - offsetPos);
         attack();
