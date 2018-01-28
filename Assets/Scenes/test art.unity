@@ -708,11 +708,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4845990746723288, guid: b9bdbde235c5447438182dc45cd11e0d, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4845990746723288, guid: b9bdbde235c5447438182dc45cd11e0d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114315844828809478, guid: b9bdbde235c5447438182dc45cd11e0d,
         type: 2}
