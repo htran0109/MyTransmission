@@ -30,14 +30,16 @@ public class SceneManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (currentState == gameState.TITLE) {
-			if (Input.GetKey (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.Space)) {
 				currentState = gameState.PLAYING;
 
 				startGame ();
 			}
 		} else if (currentState == gameState.END) {
-			if (Input.GetKey (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.Space)) {
 				currentState = gameState.TITLE;
+
+				showTitle ();
 			}
 		}
 	}
@@ -60,6 +62,16 @@ public class SceneManager : MonoBehaviour {
 		gameContainer.SetActive(false);
 
 		// Enable all title game object
-		titleContainer.SetActive(true);
+		endGameContainer.SetActive(true);
+
+		currentState = gameState.END;
+	}
+
+	void showTitle() {
+		// Disable game object
+		endGameContainer.SetActive (false);
+
+		// Enable all title game object
+		titleContainer.SetActive (true);
 	}
 }

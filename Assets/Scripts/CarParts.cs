@@ -6,6 +6,7 @@ public class CarParts : MonoBehaviour {
 
 	// Game object references
 	public GameObject explosion;
+	public SceneManager manager;
 
 
     public float minBreakTime; //variables to determine when the next random break will happen
@@ -176,6 +177,7 @@ public class CarParts : MonoBehaviour {
 				explosion.SetActive(true);
                 breakNumber = 5;
                 Debug.Log ("GAME OVER");
+				manager.endGame ();
 			}
             
             damageCar();
